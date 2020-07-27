@@ -1,1 +1,3 @@
-# Magic-Player
+# Magic Player
+
+Disney parks audio player.
