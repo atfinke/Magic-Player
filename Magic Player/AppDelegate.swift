@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MediaPlayer
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -22,6 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.makeKeyAndOrderFront(nil)
         }
         return true
+    }
+    
+    func applicationWillBecomeActive(_ notification: Notification) {
+        MPNowPlayingInfoCenter.default().playbackState = .playing // I am the captain now
     }
 }
 
