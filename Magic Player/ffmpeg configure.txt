@@ -1,9 +1,8 @@
   ./configure --disable-everything --disable-autodetect --disable-network --enable-pthreads \
-  --enable-avcodec --enable-avformat --enable-swresample --enable-avfilter \
   --enable-parser=mpegaudio  --enable-demuxers \
-  --enable-muxers --enable-decoder=aac --enable-encoder=aac \
+  --enable-muxers --enable-decoder=aac,opus,vorbis --enable-encoder=aac \
   --enable-filter=aresample --enable-protocol=file \
-  --disable-doc --disable-ffprobe --enable-small --disable-debug
+  --disable-doc --disable-ffprobe --enable-small --disable-debug --enable-libvpx
 
 
 codesign --force --options runtime --sign "Developer ID Application: Andrew Finke" ./ffmpeg

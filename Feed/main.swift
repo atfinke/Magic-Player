@@ -14,7 +14,10 @@ let waltDisneyWorld: AudioFeedResort = .init(
     coordinate: .init(latitude: 28.388195, longitude: -81.569324),
     mapTemplateString: "https://cdn6.parksmedia.wdprapps.disney.com/media/maps/prod/wdw/152/{z}/{x}/{y}.jpg",
     parks: [
-        magicKingdom
+        magicKingdom,
+        epcot,
+        hollywoodStudios,
+        animalKingdom
     ],
     other: waltDisneyWorldOtherLocations)
 

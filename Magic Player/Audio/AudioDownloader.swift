@@ -43,43 +43,38 @@ struct AudioDownloader {
         os_log("Using ffmpeg @ %{public}s", log: .audioDownloader, type: .info, ffmpegPath)
         os_log("Using cache directory @ %{public}s", log: .audioDownloader, type: .info, directoryPath)
         
-        let audioFileName = UUID().uuidString + ".m4a"
-        let audioFileURL = MagicURL.audioDirectory.appendingPathComponent(audioFileName)
+        let audioFileName = UUID().uuidString
+        let audioFileURL = MagicURL.audioDirectory.appendingPathComponent(audioFileName + ".m4a")
         os_log("Saving to %{public}s", log: .audioDownloader, type: .info, audioFileURL.absoluteString)
         
+        var postProcessorArgs = ""
+        if let time = item.startTime {
+            postProcessorArgs = "-ss \(time)"
+        }
+        if let time = item.endTime {
+            postProcessorArgs += " -to \(time)"
+        }
+        os_log("Process args: %{public}s", log: .audioDownloader, type: .info, postProcessorArgs)
+
         let process = Process()
         process.launchPath = "/usr/bin/python"
         process.currentDirectoryPath = directoryPath
         process.arguments = [
             launchPath,
+            "--extract-audio",
+            "--audio-format",
+            "m4a",
             item.url.absoluteString,
             "-o",
-            audioFileName,
+            audioFileName + ".%(ext)s",
             "-f",
-            "bestaudio[ext=m4a]",
+            "bestaudio",
             "--ffmpeg-location",
-            ffmpegPath
+            ffmpegPath,
+            "--postprocessor-args",
+            postProcessorArgs
         ]
         
-        var trimString = ""
-        if let time = item.startTime {
-            trimString = "-ss \(time)"
-        }
-        if let time = item.endTime {
-            trimString += " -to \(time)"
-        }
-        if trimString.isEmpty {
-            os_log("Not trimming", log: .audioDownloader, type: .info)
-        } else {
-            process.arguments?.append(contentsOf: [
-               "--postprocessor-args",
-                trimString
-            ])
-            os_log("Trimming: %{public}s", log: .audioDownloader, type: .info, trimString)
-        }
-        
-        os_log("Process args: %{public}s", log: .audioDownloader, type: .info, process.arguments?.description ?? "-")
-
         let pipe = Pipe()
         process.standardOutput = pipe
         pipe.fileHandleForReading.readabilityHandler = { pipe in

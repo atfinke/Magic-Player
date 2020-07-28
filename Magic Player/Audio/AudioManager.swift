@@ -137,7 +137,6 @@ class AudioManager: NSObject {
             self.playbackState = .downloading(item: item, percent: percent)
         }, completion: { result in
             switch result {
-            
             case .completed(let item, let fileURL):
                 self.play(fileURL: fileURL, item: item)
                 self.downloadedItems.downloaded(item: item, to: fileURL)

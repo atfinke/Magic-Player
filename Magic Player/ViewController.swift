@@ -69,7 +69,11 @@ class ViewController: NSViewController, NSWindowDelegate, MKMapViewDelegate {
                 switch state {
                 case .downloading(let item, let percent):
                     self.activeAudioItem = item
-                    self.view.window?.title = "Downloading (\(percent))"
+                    if percent ==  "100%" {
+                        self.view.window?.title = "Processing Download"
+                    } else {
+                        self.view.window?.title = "Downloading (\(percent))"
+                    }
                 case .playing(let item, let name):
                     self.activeAudioItem = item
                     self.view.window?.title = "Playing: " + name

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142CD82B24D0C6E300F4BF3F /* Epcot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CD82A24D0C6E300F4BF3F /* Epcot.swift */; };
+		142CD82D24D0CB3900F4BF3F /* AnimalKingdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CD82C24D0CB3900F4BF3F /* AnimalKingdom.swift */; };
+		142CD82F24D0CD9000F4BF3F /* HollywoodStudios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142CD82E24D0CD9000F4BF3F /* HollywoodStudios.swift */; };
 		1458218B24CC21FF00B2738F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458218A24CC21FF00B2738F /* AudioManager.swift */; };
 		145821A924CC26DB00B2738F /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 145821A824CC26DB00B2738F /* ffmpeg */; };
 		145821CD24CC4ED800B2738F /* DownloadedAudioItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145821CC24CC4ED800B2738F /* DownloadedAudioItems.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		142CD82A24D0C6E300F4BF3F /* Epcot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epcot.swift; sourceTree = "<group>"; };
+		142CD82C24D0CB3900F4BF3F /* AnimalKingdom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalKingdom.swift; sourceTree = "<group>"; };
+		142CD82E24D0CD9000F4BF3F /* HollywoodStudios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HollywoodStudios.swift; sourceTree = "<group>"; };
 		1458218A24CC21FF00B2738F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		145821A824CC26DB00B2738F /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		145821CA24CC485100B2738F /* ffmpeg configure.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ffmpeg configure.txt"; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 				1485273A24CED4AE007DF386 /* Feed-V1.json */,
 				14C2291E24CB025700BF991E /* main.swift */,
 				145821D324CC577B00B2738F /* MagicKingdom.swift */,
+				142CD82A24D0C6E300F4BF3F /* Epcot.swift */,
+				142CD82C24D0CB3900F4BF3F /* AnimalKingdom.swift */,
+				142CD82E24D0CD9000F4BF3F /* HollywoodStudios.swift */,
 				1485271824CD75F8007DF386 /* WDWResorts.swift */,
 			);
 			path = Feed;
@@ -278,9 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142CD82F24D0CD9000F4BF3F /* HollywoodStudios.swift in Sources */,
 				145821D024CC573A00B2738F /* AudioFeed.swift in Sources */,
 				14C2291F24CB025700BF991E /* main.swift in Sources */,
 				145821D424CC577B00B2738F /* MagicKingdom.swift in Sources */,
+				142CD82D24D0CB3900F4BF3F /* AnimalKingdom.swift in Sources */,
+				142CD82B24D0C6E300F4BF3F /* Epcot.swift in Sources */,
 				1485271924CD75F8007DF386 /* WDWResorts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
