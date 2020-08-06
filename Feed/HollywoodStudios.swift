@@ -82,7 +82,7 @@ private let mania: AudioFeedLocation = .init(
 
 private let toyStoryLand: AudioFeedLand = .init(
     name: "Toy Story Land",
-    coordinate: .init(latitude: 28.4202, longitude:  -81.58288),
+    coordinate: .init(latitude: 28.355949, longitude:  -81.562334),
     locations: [
         mania
     ],
@@ -145,7 +145,7 @@ private let sunsetBoulevard: AudioFeedLand = .init(
         tower,
         fantasmic
     ],
-    items: [])
+    items: nil)
 
 
 // MARK: - Park -

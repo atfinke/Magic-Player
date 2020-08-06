@@ -22,7 +22,7 @@ private let flight: AudioFeedLocation = .init(
 
 private let pandora: AudioFeedLand = .init(
     name: "Pandora – The World of Avatar",
-    coordinate: .init(latitude: 28.373228, longitude: -81.547489),
+    coordinate: .init(latitude: 28.355611, longitude: -81.591886),
     locations: [
         flight
     ],

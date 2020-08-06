@@ -139,7 +139,7 @@ private let frontierland: AudioFeedLand = .init(
 // MARK: - Liberty Square -
 
 private let hauntedMansion: AudioFeedLocation = .init(
-    name: "Big Thunder Mountain",
+    name: "Haunted Mansion",
     coordinate: .init(latitude: 28.4202, longitude: -81.58288),
     items: [
         .init(type: .queue,
