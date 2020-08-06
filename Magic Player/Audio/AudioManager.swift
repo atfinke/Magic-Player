@@ -86,6 +86,18 @@ class AudioManager: NSObject {
             return .success
         }
         
+        center.playCommand.isEnabled = true
+        center.playCommand.addTarget { _ -> MPRemoteCommandHandlerStatus in
+            self.togglePlayback()
+            return .success
+        }
+        
+        center.pauseCommand.isEnabled = true
+        center.pauseCommand.addTarget { _ -> MPRemoteCommandHandlerStatus in
+            self.togglePlayback()
+            return .success
+        }
+        
         center.previousTrackCommand.isEnabled = true
         center.previousTrackCommand.addTarget { _ -> MPRemoteCommandHandlerStatus in
             self.restart()
